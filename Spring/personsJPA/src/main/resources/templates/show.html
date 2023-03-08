@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Человек</title>
+</head>
+<body>
+Имя: <a th:text="${person.getName()}"></a><br>
+id: <a th:text="${person.getId()}"></a><br>
+Возраст: <a th:text="${person.getAge()}"></a><br>
+Email: <a th:text="${person.getEmail()}"></a><br>
+Адрес: <a th:text="${person.getAddress()}"></a><br>
+Дата рождения: <a th:text="${person.getDateOfBirth()}"></a><br>
+Настроение: <a th:text="${person.getMood()}"></a><br>
+<a th:href="@{/people/{id}/edit(id=${person.getId()})}">Редактировать</a>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+  <input type="submit" value="Удалить"/>
+</form>
+</body>
+</html>

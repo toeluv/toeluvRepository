@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Выберите администратора <br/>
+<form th:method="patch" th:action="@{/admin/add}">
+    <label for="person">Выберите человека:</label>
+    <select th:object="${person}" th:field="*{name}" id="person">
+        <option th:each="person:${people}" th:value="${person.getName()}"
+        th:text="${person.getName()}"></option>
+    </select>
+    <input type="submit" value="Назначить администратором">
+</form>
+</body>
+</html>
